@@ -8,11 +8,11 @@ const config = require('./webpack.common.config');
 
 config.output = {
   filename: 'client-bundle.js',
-  path: '../app/assets/javascripts/generated'
+  path: '../app/assets/javascripts/components'
 };
 
 // load jQuery from cdn or rails asset pipeline
-config.externals = {jquery: 'var jQuery'};
+// config.externals = {jquery: 'var jQuery'};
 
 // You can add entry points specific to rails here
 config.entry.push('./scripts/rails_only');

@@ -3,10 +3,13 @@ Rails.application.configure do
 
   # In development send *bundle.js to the webpack-dev-server running on 3000
   config.action_controller.asset_host = Proc.new { |source|
-    if source =~ /client-bundle\.js$/i
+    if source =~ /client-bundle.*\.js$/i
     "http://localhost:3000"
     end
   }
+
+  # turn off digest for the webpack hot server
+  config.assets.digest = false
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -33,10 +36,6 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-
-  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
-  # yet still be able to expire them through the digest params.
-  config.assets.digest = true
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.

@@ -10,8 +10,9 @@ config.entry.push('webpack-dev-server/client?http://localhost:3000',
 config.output = {
 
   // this file is served directly by webpack
-  filename: 'express-bundle.js',
-  path: __dirname
+  filename: 'client-bundle.self.js',
+  path: __dirname,
+  publicPath: 'http://localhost:3000/assets/components'
 };
 config.plugins = [new webpack.HotModuleReplacementPlugin()];
 config.devtool = 'eval-source-map';
