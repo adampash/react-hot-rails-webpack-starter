@@ -1,7 +1,9 @@
+React = require 'React'
+
 HelloWorld = React.createClass
   render: ->
     <div>
-      Hello world
+      Hi dude
     </div>
 
 React.render(

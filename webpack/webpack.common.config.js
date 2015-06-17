@@ -6,7 +6,7 @@ module.exports = {
 
   // the project dir
   context: __dirname,
-  entry: ['./assets/javascripts/App'],
+  entry: ['./assets/javascripts/app.cjsx'],
 
   // In case you wanted to load jQuery from the CDN, this is how you would do it:
   // externals: {
@@ -16,7 +16,7 @@ module.exports = {
     root: [path.join(__dirname, 'scripts'),
            path.join(__dirname, 'assets/javascripts'),
            path.join(__dirname, 'assets/stylesheets')],
-    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.scss', '.css', 'config.js']
+    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.scss', '.css', 'config.js', '.cjsx']
   },
   module: {
     loaders: []

@@ -1,5 +1,12 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  # Settings specified here will take precedence over those in config/application.rb
+
+  # In development send *bundle.js to the webpack-dev-server running on 3000
+  config.action_controller.asset_host = Proc.new { |source|
+    if source =~ /client-bundle\.js$/i
+    "http://localhost:3000"
+    end
+  }
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

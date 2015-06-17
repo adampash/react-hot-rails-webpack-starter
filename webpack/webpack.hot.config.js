@@ -5,14 +5,8 @@ const path = require('path');
 const config = require('./webpack.common.config');
 const webpack = require('webpack');
 
-// We're using the bootstrap-sass loader.
-// See: https://github.com/justin808/bootstrap-sass-loader
 config.entry.push('webpack-dev-server/client?http://localhost:3000',
-  'webpack/hot/dev-server',
-  './scripts/webpack_only',
-
-  // custom bootstrap
-  'bootstrap-sass!./bootstrap-sass.config.js');
+  'webpack/hot/dev-server');
 config.output = {
 
   // this file is served directly by webpack
@@ -26,18 +20,6 @@ config.devtool = 'eval-source-map';
 config.module.loaders.push(
       { test: /\.css$/, loaders: ['style', 'css']},
       { test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
-      { test: /\.coffee$/, loader: 'coffee' }
-  {
-    test: /\.scss$/,
-    loader: 'style!css!sass?outputStyle=expanded&imagePath=/assets/images&includePaths[]=' +
-    path.resolve(__dirname, './assets/stylesheets')
-  },
-
-  // The url-loader uses DataUrls. The file-loader emits files.
-  {test: /\.woff$/, loader: 'url-loader?limit=10000&minetype=application/font-woff'},
-  {test: /\.woff2$/, loader: 'url-loader?limit=10000&minetype=application/font-woff'},
-  {test: /\.ttf$/, loader: 'file-loader'},
-  {test: /\.eot$/, loader: 'file-loader'},
-  {test: /\.svg$/, loader: 'file-loader'});
+      { test: /\.coffee$/, loader: 'coffee' });
 
 module.exports = config;
