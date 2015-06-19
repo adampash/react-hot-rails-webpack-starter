@@ -20,7 +20,7 @@ config.entry.push('./scripts/rails_only');
 // See webpack.common.config for adding modules common to both the webpack dev server and rails
 
 config.module.loaders.push(
-  { test: /\.css$/, loaders: ['style', 'css']},
+  { test: /\.scss$/, loaders: ['style', 'css', 'sass']},
   { test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
   { test: /\.coffee$/, loader: 'coffee' },
 

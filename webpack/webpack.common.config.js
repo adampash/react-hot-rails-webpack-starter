@@ -3,6 +3,8 @@
 const path = require('path');
 
 module.exports = {
+  // turn to false if not on home network
+  home: true,
 
   // the project dir
   context: __dirname,

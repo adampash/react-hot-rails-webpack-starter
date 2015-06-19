@@ -1,3 +1,5 @@
+require '../stylesheets/app.scss'
+
 React = require 'react'
 window.React = React
 Foo = require 'foo'
@@ -18,7 +20,7 @@ HelloWorld = React.createClass
   render: ->
     <div onMouseOver={@handleHover}>
       <h2>
-        Hi {@state.name}.
+        Hello {@state.name}
       </h2>
       <Foo name={@state.name} />
     </div>

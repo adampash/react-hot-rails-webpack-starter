@@ -1,6 +1,9 @@
-h2 {
-  font-size: 100px;
+@import 'fonts';
+
+body {
+  max-width: 800px;
 }
-.foo.bar {
-  width: 100px;
+h2 {
+  font-size: $size;
+  font-family: $font;
 }

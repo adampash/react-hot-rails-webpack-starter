@@ -3,8 +3,13 @@ Rails.application.configure do
 
   # In development send *bundle.js to the webpack-dev-server running on 3000
   config.action_controller.asset_host = Proc.new { |source|
+    home = true
     if source =~ /client-bundle.*\.js$/i
-    "http://localhost:3000"
+      if home
+        "http://192.168.1.212:3000"
+      else
+        "http://localhost:3000"
+      end
     end
   }
 

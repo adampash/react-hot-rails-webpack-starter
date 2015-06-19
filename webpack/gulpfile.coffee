@@ -13,10 +13,10 @@ $ = require('gulp-load-plugins')()
 
 # CSS
 gulp.task('css', ->
-  gulp.src(['./assets/stylesheets/*.sass', './assets/stylesheets/*.scss'])
+  gulp.src(['assets/stylesheets/*.scss'])
     .pipe($.compass({
-      sass: 'assets/styles'
-      image: 'assets/styles/images'
+      sass: 'assets/stylesheets'
+      image: 'assets/stylsheets/images'
       style: 'nested'
       comments: false
       bundle_exec: true
@@ -27,10 +27,6 @@ gulp.task('css', ->
     )
     .pipe($.size())
     .pipe(gulp.dest('../app/assets/stylesheets'))
-    .pipe(map((a, cb) ->
-      if devServer.invalidate? then devServer.invalidate()
-      cb()
-    ))
 )
 
 gulp.task('copy-assets', ->
@@ -73,7 +69,7 @@ gulp.task "webpack:build", ['css'], (callback) ->
 
 # Create a single instance of the compiler to allow caching.
 devCompiler = webpack(webpackConfig)
-gulp.task "webpack:build-dev", ['css'], (callback) ->
+gulp.task "webpack:build-dev", (callback) ->
 
   # Run webpack.
   devCompiler.run (err, stats) ->
@@ -85,7 +81,7 @@ gulp.task "webpack:build-dev", ['css'], (callback) ->
   return
 
 devServer = {}
-gulp.task "webpack-dev-server", ['css'], (callback) ->
+gulp.task "webpack-dev-server", (callback) ->
   # Ensure there's a `./public/main.css` file that can be required.
 
   # Start a webpack-dev-server.
@@ -97,9 +93,14 @@ gulp.task "webpack-dev-server", ['css'], (callback) ->
     noInfo: true
     stats: {colors: true}
   )
-  devServer.listen 3000, "0.0.0.0", (err) ->
+  console.log webpackConfig.home
+  if webpackConfig.home
+    url = "192.168.1.212"
+  else
+    url = "localhost"
+  devServer.listen 3000, url, (err) ->
     throw new gutil.PluginError("webpack-dev-server", err) if err
-    gutil.log "[webpack-dev-server]", "http://localhost:3000"
+    gutil.log "[webpack-dev-server]", "#{url}:3000"
     callback()
 
   return
@@ -110,5 +111,5 @@ gulp.task 'default', ->
 gulp.task 'build', ['webpack:build', 'copy-assets']
 
 gulp.task 'watch', ['css', 'copy-assets', 'webpack-dev-server'], ->
-  gulp.watch(['src/styles/**'], ['css'])
-  gulp.watch(['assets/**'], ['copy-assets'])
+  gulp.watch(['assets/stylesheets/**'], ['css'])
+  gulp.watch(['assets/images/**'], ['copy-assets'])
