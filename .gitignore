@@ -15,3 +15,5 @@
 # Ignore node biz
 node_modules
 webpack/npm-debug.log*
+
+.sass-cache

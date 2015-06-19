@@ -1,4 +1,6 @@
 React = require 'react'
+window.React = React
+Foo = require 'foo'
 
 HelloWorld = React.createClass
   getInitialState: ->
@@ -16,8 +18,9 @@ HelloWorld = React.createClass
   render: ->
     <div onMouseOver={@handleHover}>
       <h2>
-        Hello {@state.name}.
+        Hi {@state.name}.
       </h2>
+      <Foo name={@state.name} />
     </div>
 
 React.render(
