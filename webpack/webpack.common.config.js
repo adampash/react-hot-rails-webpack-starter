@@ -8,7 +8,10 @@ module.exports = {
 
   // the project dir
   context: __dirname,
-  entry: ['./assets/javascripts/app.cjsx'],
+  entry: [
+    './assets/javascripts/app.cjsx',
+    './assets/stylesheets/app.scss'
+  ],
 
   // In case you wanted to load jQuery from the CDN, this is how you would do it:
   // externals: {

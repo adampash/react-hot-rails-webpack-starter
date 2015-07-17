@@ -25,8 +25,12 @@ config.devtool = 'eval-source-map';
 
 // All the styling loaders only apply to hot-reload, not rails
 config.module.loaders.push(
-      { test: /\.scss$/, loaders: ['style', 'css', 'sass']},
+      {
+        test: /\.scss$/,
+        loader: "style!css?sourceMap!autoprefixer-loader!ruby-sass"
+      }, // loaders: ['style', 'css', 'sass', 'autoprefixer']},
       { test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
-      { test: /\.coffee$/, loader: 'coffee' });
+      { test: /\.coffee$/, loader: 'coffee' }
+)
 
 module.exports = config;

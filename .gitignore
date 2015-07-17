@@ -16,4 +16,8 @@
 node_modules
 webpack/npm-debug.log*
 
+# Ignore hot-update files
+webpack/*hot-update.json
+webpack/*hot-update.js
+
 .sass-cache

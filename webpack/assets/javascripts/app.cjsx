@@ -1,5 +1,3 @@
-require '../stylesheets/app.scss'
-
 React = require 'react'
 window.React = React
 Foo = require 'foo'
