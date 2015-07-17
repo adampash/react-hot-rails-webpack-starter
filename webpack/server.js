@@ -15,21 +15,6 @@ var server = new WebpackDevServer(webpack(config), {
 server.app.use(bodyParser.json(null));
 server.app.use(bodyParser.urlencoded({extended: true}));
 
-// server.app.get('/comments.json', function(req, res) {
-//   res.setHeader('Content-Type', 'application/json');
-//   res.send(JSON.stringify(comments));
-// });
-
-// server.app.post('/comments.json', function(req, res) {
-//   console.log('Processing comment: %j', req.body.comment);
-//   console.log('(shhhh...napping 1 seconds)');
-//   sleep.sleep(1);
-//   console.log('Just got done with nap!');
-//   comments.push(req.body.comment);
-//   res.setHeader('Content-Type', 'application/json');
-//   res.send(JSON.stringify(req.body.comment));
-// });
-
 server.listen(3000, 'localhost', function(err) {
   if (err) {
     console.log(err);

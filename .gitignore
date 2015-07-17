@@ -21,3 +21,6 @@ webpack/*hot-update.json
 webpack/*hot-update.js
 
 .sass-cache
+
+# any environment variables
+.env
