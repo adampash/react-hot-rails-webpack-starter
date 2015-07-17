@@ -20,7 +20,9 @@ config.output = {
   path: __dirname,
   publicPath: url + ':3000/assets/components'
 };
-config.plugins = [new webpack.HotModuleReplacementPlugin()];
+config.plugins = [
+  new webpack.HotModuleReplacementPlugin()
+];
 config.devtool = 'eval-source-map';
 
 // All the styling loaders only apply to hot-reload, not rails
