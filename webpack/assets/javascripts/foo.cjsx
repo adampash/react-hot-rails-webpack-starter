@@ -1,5 +1,5 @@
 module.exports = React.createClass
   render: ->
     <div>
-      Hello {@props.name}
+      Hi {@props.name}
     </div>

@@ -24,7 +24,7 @@ HelloWorld = React.createClass
     </div>
 
 React.render(
-  <HelloWorld name={"Adam"} />,
+  <HelloWorld name="You" />,
   document.body
 )
 
