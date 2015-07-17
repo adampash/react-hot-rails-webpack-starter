@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def json
-    render json: {name: 'Tommy'}
+    render json: {name: 'person'}
   end
 end
