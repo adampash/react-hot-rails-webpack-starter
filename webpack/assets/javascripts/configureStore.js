@@ -3,7 +3,6 @@ import thunk from 'redux-thunk'
 import rootReducer from './reducers/index'
 import { devTools, persistState } from 'redux-devtools'
 
-
 export default function configureStore(initialState) {
   // // Enables your middleware:
   let composers = [ applyMiddleware(thunk) ]

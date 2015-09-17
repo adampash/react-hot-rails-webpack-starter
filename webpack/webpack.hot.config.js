@@ -9,10 +9,10 @@ const url = "http://0.0.0.0";
 
 config.entry.push(
   // 'webpack-hot-middleware/client?' + url + ":3000"
-  'webpack-dev-server/client?' + url + ':3000'
+  'webpack-dev-server/client?' + url + ':3000',
+  'webpack/hot/only-dev-server'
 );
 config.output = {
-
   // this file is served directly by webpack
   filename: 'client-bundle.self.js',
   path: __dirname,
@@ -36,7 +36,7 @@ config.module.loaders.push(
   {
     test: /\.jsx?$/,
     exclude: /node_modules/,
-    loaders: ['babel-loader']
+    loaders: ['react-hot', 'babel-loader']
   },
   {
     test: /\.scss$/,
