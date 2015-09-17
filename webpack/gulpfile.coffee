@@ -2,6 +2,7 @@ gulp = require 'gulp'
 gutil = require 'gulp-util'
 webpack = require("webpack")
 WebpackDevServer = require("webpack-dev-server")
+console.log "OMG HIHI HI"
 webpackConfig = require("./webpack.hot.config.js")
 # webpackProductionConfig = require("./webpack.production.config.js")
 map = require 'map-stream'

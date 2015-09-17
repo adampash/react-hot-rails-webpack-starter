@@ -3,13 +3,10 @@
 const path = require('path');
 
 module.exports = {
-  // turn to false if not on home network
-  home: true,
-
   // the project dir
   context: __dirname,
   entry: [
-    './assets/javascripts/app.cjsx',
+    './assets/javascripts/app.js',
     './assets/stylesheets/app.scss'
   ],
 
