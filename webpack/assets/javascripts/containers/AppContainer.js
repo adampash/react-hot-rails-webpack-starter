@@ -9,7 +9,10 @@ let AppContainer = React.createClass({
     const { dispatch, foo } = this.props
     return(
       <div>
-        <DumbComponent foo={foo} test={(text='hi') => dispatch(test(text))} />
+        <DumbComponent
+          foo={foo}
+          test={(text='hi') => dispatch(test(text))}
+        />
       </div>
     )
   }
