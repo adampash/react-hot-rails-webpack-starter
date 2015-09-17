@@ -2,6 +2,7 @@ gulp = require 'gulp'
 gutil = require 'gulp-util'
 webpack = require("webpack")
 WebpackDevServer = require("webpack-dev-server")
+# WebpackDevServer = require("webpack-hot-middleware/client")
 console.log "OMG HIHI HI"
 webpackConfig = require("./webpack.hot.config.js")
 # webpackProductionConfig = require("./webpack.production.config.js")

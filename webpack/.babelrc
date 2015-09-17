@@ -11,6 +11,10 @@
       "imports": ["react"],
       // this is important for Webpack HMR:
       "locals": ["module"]
+    }, {
+      // you can have many transforms, not just one
+      "target": "react-transform-catch-errors",
+      "imports": ["react", "redbox-react"]
     }]
     // note: you can put more transforms into array
     // this is just one of them!

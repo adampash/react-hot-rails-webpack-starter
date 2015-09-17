@@ -34,7 +34,7 @@
     "react-hot-loader": "^1.1.7",
     "react-preload": "0.2.2",
     "react-retina-image": "^1.1.2",
-    "react-router": "^1.0.0-rc1",
+    "react-router": "^0.13.3",
     "react-timer-mixin": "^0.13.1",
     "ruby-sass-loader": "^0.2.0",
     "sass-loader": "^1.0.2",
@@ -43,7 +43,10 @@
     "touch": "0.0.3",
     "underscore": "^1.8.2",
     "webpack": "^1.7.2",
-    "webpack-dev-server": "^1.7.0"
+    "webpack-dev-server": "^1.7.0",
+    "react-redux": "^2.0.0",
+    "redux": "^2.0.0",
+    "redux-thunk": "^0.1.0"
   },
   "homepage": "",
   "jest": {
@@ -83,6 +86,7 @@
     "babel-loader": "^5.3.2",
     "babel-plugin-react-transform": "^1.0.5",
     "react-transform-webpack-hmr": "^0.1.5",
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.2",
+    "webpack-dev-middleware": "^1.2.0"
   }
 }
