@@ -94,10 +94,7 @@ gulp.task "webpack-dev-server", (callback) ->
     stats: {colors: true}
   )
   console.log webpackConfig.home
-  if webpackConfig.home
-    url = "192.168.1.212"
-  else
-    url = "localhost"
+  url = "0.0.0.0"
   devServer.listen 3000, url, (err) ->
     throw new gutil.PluginError("webpack-dev-server", err) if err
     gutil.log "[webpack-dev-server]", "#{url}:3000"

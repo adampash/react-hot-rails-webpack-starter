@@ -10,6 +10,7 @@ if (config.home) {
 } else {
   url = "http://localhost"
 }
+url = "http://0.0.0.0"
 
 config.entry.push('webpack-dev-server/client?' + url + ':3000',
   'webpack/hot/dev-server');

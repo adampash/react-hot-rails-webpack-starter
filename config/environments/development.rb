@@ -5,11 +5,7 @@ Rails.application.configure do
   config.action_controller.asset_host = Proc.new { |source|
     home = true
     if source =~ /client-bundle.*\.js$/i
-      if home
-        "http://192.168.1.212:3000"
-      else
-        "http://localhost:3000"
-      end
+      "http://0.0.0.0:3000"
     end
   }
 
