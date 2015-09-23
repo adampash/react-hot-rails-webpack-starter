@@ -8,17 +8,3 @@ export function foo(state='bar', action) {
     return state
   }
 }
-
-// below is without combinereducers
-// const initialState = {foo: 'bar'}
-
-// export default function testApp(state = initialState, action={}) {
-//   switch (action.type) {
-//   case TEST:
-//     return _.assign({}, state, {
-//       foo: action.text,
-//     })
-//   default:
-//     return state
-//   }
-// }
