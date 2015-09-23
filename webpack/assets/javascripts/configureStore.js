@@ -4,15 +4,14 @@ import rootReducer from './reducers/index'
 import { devTools, persistState } from 'redux-devtools'
 import AppContainer from './containers/AppContainer'
 import { reduxReactRouter } from 'redux-router'
-import createHistory from 'history/lib/createHashHistory'
-import routes from './routes'
+import createHistory from 'history/lib/createBrowserHistory'
+// import createHistory from 'history/lib/createHashHistory'
 
 export default function configureStore(initialState) {
   // // Enables your middleware:
   let composers = [
     applyMiddleware(thunk),
     reduxReactRouter({
-      routes,
       createHistory
     })
   ]

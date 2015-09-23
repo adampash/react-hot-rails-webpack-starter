@@ -6,26 +6,31 @@ import {
   DebugPanel,
   LogMonitor
 } from 'redux-devtools/lib/react'
-import 'babel-core/polyfill'
 import configureStore from './configureStore'
 import AppContainer from './containers/AppContainer'
+import { ReduxRouter } from 'redux-router'
+import getRoutes from './routes'
 
 window.React = React
 let store = configureStore()
 
+class Root extends React.Component {
+  render() {
+    return (
+      <div>
+        <Provider store={store}>
+          <ReduxRouter>
+            {getRoutes(store)}
+          </ReduxRouter>
+        </Provider>
+        {__DEVTOOLS__ &&
+          <DebugPanel top right bottom>
+            <DevTools store={store} monitor={LogMonitor} />
+          </DebugPanel>
+        }
+      </div>
+    )
+  }
+}
 
-
-ReactDOM.render(
-  <div>
-    <Provider store={store}>
-      <AppContainer />
-    </Provider>
-    {__DEVTOOLS__ &&
-      <DebugPanel top right bottom>
-        <DevTools store={store} monitor={LogMonitor} />
-      </DebugPanel>
-      }
-    </div>
-  ,
-  document.querySelector('#root')
-)
+ReactDOM.render(<Root /> , document.querySelector('#root'))
