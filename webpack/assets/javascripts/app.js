@@ -13,6 +13,8 @@ import AppContainer from './containers/AppContainer'
 window.React = React
 let store = configureStore()
 
+
+
 ReactDOM.render(
   <div>
     <Provider store={store}>

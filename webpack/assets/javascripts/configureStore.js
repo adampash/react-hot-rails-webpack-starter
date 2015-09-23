@@ -2,10 +2,20 @@ import { compose, createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers/index'
 import { devTools, persistState } from 'redux-devtools'
+import AppContainer from './containers/AppContainer'
+import { reduxReactRouter } from 'redux-router'
+import createHistory from 'history/lib/createHashHistory'
+import routes from './routes'
 
 export default function configureStore(initialState) {
   // // Enables your middleware:
-  let composers = [ applyMiddleware(thunk) ]
+  let composers = [
+    applyMiddleware(thunk),
+    reduxReactRouter({
+      routes,
+      createHistory
+    })
+  ]
 
   // include devtools and persiststate if enabled
   if (__DEVTOOLS__) {

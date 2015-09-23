@@ -7,6 +7,7 @@ import { test } from '../actions/example'
 let AppContainer = React.createClass({
   render() {
     const { dispatch, foo } = this.props
+    console.log(this.props)
     return(
       <div>
         <DumbComponent
@@ -19,7 +20,7 @@ let AppContainer = React.createClass({
 })
 
 function select(state) {
-  return {foo: state.foo}
+  return state
 }
 
 export default connect(select)(AppContainer)

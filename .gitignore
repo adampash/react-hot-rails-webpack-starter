@@ -15,6 +15,7 @@
 # Ignore node biz
 node_modules
 webpack/npm-debug.log*
+npm-debug.log
 
 # Ignore hot-update files
 webpack/*hot-update.json
